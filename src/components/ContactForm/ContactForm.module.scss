@@ -1,0 +1,48 @@
+@import '../../styles/shared.scss';
+
+.contactForm {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid var(--main-color);
+  padding: 10px;
+  max-width: 100%;
+  margin-bottom: 30px;
+}
+.label {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  font-size: 20px;
+  font-weight: bold;
+}
+.input {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 2px 5px;
+  max-width: 250px;
+  border: none;
+  outline: none;
+  border: 1px solid var(--main-border-color);
+  border-radius: 5px;
+  &:focus {
+    border: 3px solid var(--second-border-color);
+    box-shadow: 0 0 3px 0 var(--second-border-color) inset,
+      0 0 3px 3px var(--second-border-color);
+  }
+}
+.addContactBtn {
+  display: block;
+  width: 100px;
+  border-radius: 5px;
+  padding: 1px;
+  border: 1px solid var(--main-border-color);
+  cursor: pointer;
+  background-color: var(--second-color);
+  font-weight: bold;
+  transition: all 150ms ease-in-out;
+  &:hover {
+    //background-color: #94c0f9;
+    box-shadow: 0 0 5px 0 var(--second-border-color) inset,
+      0 0 5px 4px var(--second-border-color);
+  }
+}

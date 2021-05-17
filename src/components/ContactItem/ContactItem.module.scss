@@ -1,0 +1,55 @@
+@import '../../styles/shared.scss';
+
+.phoneNumber {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.contactItem {
+  &:not(:last-child) {
+    margin-bottom: 10px;
+  }
+}
+.contactDeleteBtn {
+  position: relative;
+  padding: 2px 5px;
+  background-color: var(--second-color);
+  border: 1px solid var(--main-border-color);
+  border-radius: 5px;
+  font-size: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  &:hover {
+    background-color: var(--second-border-color);
+  }
+}
+.contactDeleteBtn::after {
+  content: '';
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  border: 3px solid var(--second-border-color);
+  position: absolute;
+  z-index: -1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: none;
+  display: none;
+}
+.contactDeleteBtn:hover::after,
+.contactDeleteBtn:focus::after {
+  display: block;
+  animation: ring 1.5s infinite;
+}
+@keyframes ring {
+  0% {
+    width: 30px;
+    height: 30px;
+    opacity: 1;
+  }
+  100% {
+    width: 80px;
+    height: 80px;
+    opacity: 0;
+  }
+}
