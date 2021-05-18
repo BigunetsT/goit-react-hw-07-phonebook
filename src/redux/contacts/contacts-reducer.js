@@ -12,12 +12,7 @@ import {
 } from './contacts-actions';
 
 const itemsReducer = createReducer([], {
-  [addContactSuccess]: (state, { payload }) =>
-    state
-      .map(item => item.name.toLocaleLowerCase())
-      .includes(payload.name.toLocaleLowerCase())
-      ? alert(`${payload.name} is already in contacts.`)
-      : [...state, payload],
+  [addContactSuccess]: (state, { payload }) => [...state, payload],
   [deleteContactSuccess]: (state, { payload }) =>
     state.filter(contact => contact.id !== payload),
   [fetchContactSuccess]: (_, { payload }) => payload,
