@@ -1,5 +1,5 @@
 import axios from 'axios';
-
+import store from '../store';
 import {
   addContactRequest,
   addContactSuccess,
@@ -49,6 +49,13 @@ const fetchContacts = () => async dispatch => {
 const addContact =
   ({ name, number }) =>
   async dispatch => {
+    const { data } = await axios.get('/contacts');
+    if (
+      data.map(item => item.name.toLowerCase()).includes(name.toLowerCase())
+    ) {
+      alert(`${name} is already in contacts`);
+      return;
+    }
     const contact = { name, number };
     dispatch(addContactRequest());
     try {
