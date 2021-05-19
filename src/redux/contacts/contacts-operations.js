@@ -13,30 +13,7 @@ import {
 } from './contacts-actions';
 
 axios.defaults.baseURL = 'http://localhost:4040';
-// const fetchContacts = () => dispatch => {
-//   dispatch(fetchContactRequest());
-//   axios
-//     .get('/contacts')
-//     .then(({ data }) => dispatch(fetchContactSuccess(data)))
-//     .catch(error => dispatch(fetchContactError(error)));
-// };
-// const addContact =
-//   ({ name, number }) =>
-//   dispatch => {
-//     const contact = { name, number };
-//     dispatch(addContactRequest());
-//     axios
-//       .post('/contacts', contact)
-//       .then(({ data }) => dispatch(addContactSuccess(data)))
-//       .catch(error => dispatch(addContactError(error)));
-//   };
-// const deleteContact = contactId => dispatch => {
-//   dispatch(deleteContactRequest());
-//   axios
-//     .delete(`/contacts/${contactId}`)
-//     .then(() => dispatch(deleteContactSuccess(contactId)))
-//     .catch(error => dispatch(deleteContactError(error)));
-// };
+
 const fetchContacts = () => async dispatch => {
   dispatch(fetchContactRequest());
   try {
@@ -49,13 +26,6 @@ const fetchContacts = () => async dispatch => {
 const addContact =
   ({ name, number }) =>
   async dispatch => {
-    const { data } = await axios.get('/contacts');
-    if (
-      data.map(item => item.name.toLowerCase()).includes(name.toLowerCase())
-    ) {
-      alert(`${name} is already in contacts`);
-      return;
-    }
     const contact = { name, number };
     dispatch(addContactRequest());
     try {
