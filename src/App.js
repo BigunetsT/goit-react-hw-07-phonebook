@@ -3,7 +3,7 @@ import ContactForm from './components/ContactForm';
 import Filter from './components/Filter';
 import ContactList from './components/ContactList';
 import { connect } from 'react-redux';
-import contactsOprations from './redux/contacts/contacts-operations';
+import { contactsOperations } from './redux/contacts';
 
 import './styles.scss';
 
@@ -24,7 +24,7 @@ class App extends Component {
   }
 }
 const mapDispatchToProps = dispatch => ({
-  fetchContacts: () => dispatch(contactsOprations.fetchContacts()),
+  fetchContacts: () => dispatch(contactsOperations.fetchContacts()),
 });
 
 export default connect(null, mapDispatchToProps)(App);
