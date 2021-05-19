@@ -2,7 +2,7 @@ import styles from './ContactList.module.scss';
 import ContactItem from '../ContactItem';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import contactsSelectors from '../../redux/contacts/contacts-selectors';
+import { contactsSelectors } from '../../redux/contacts';
 
 const ContactList = ({ contacts }) => (
   <ul className={styles.contactsList}>

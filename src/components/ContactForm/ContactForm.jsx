@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styles from './ContactForm.module.scss';
 import { connect } from 'react-redux';
-import contactsOperations from '../../redux/contacts/contacts-operations';
+import { contactsOperations } from '../../redux/contacts';
 
 const INITIAL_STATE = {
   name: '',

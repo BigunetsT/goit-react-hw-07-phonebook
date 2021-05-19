@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import styles from './ContactItem.module.scss';
 import { connect } from 'react-redux';
-import contactsOperations from '../../redux/contacts/contacts-operations';
+import { contactsOperations } from '../../redux/contacts';
 
 const ContactItem = ({ id, name, number, onDelete }) => (
   <li name={name} number={number} className={styles.contactItem}>
